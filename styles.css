@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Pokemon Solid"),
+        url("https://fonts.cdnfonts.com/s/17890/Pokemon Solid.woff") format("woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    overflow: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.title {
+    font-family: "Pokemon Solid", sans-serif;
+    color: #ffcc03;
+    -webkit-text-stroke: 1px #3564ad;
+    font-size: 4rem;
+}
+
+.search {
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.group-list{
+width: 70%;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.items {
+    width: 150px;
+    background-color: #cdecff;
+    box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 300ms ease;
+}
+
+.items:hover {
+    transform: scale(1.1);
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.2em;
+margin-bottom: 0.3rem;
+}
+
+.image {
+    width: 90px;
+    margin-top: 20px;
+    filter: saturate(2);
+}
+
+.group-arrow{
+width: 90vw;
+display: flex;
+justify-content: space-between;
+position: fixed;
+top: 60vh;
+}
+.btn-arrow{
+    all: unset;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+}
+.btn-arrow:hover{
+transform: scale(1.1);
+transition:1s
+}
+.btn-arrow__previous-page:active{
+transform:translateX(-2rem);
+}
+.btn-arrow__previous-page{
+background-image: url(./assets/icons/icon-previous-page.svg);
+}
+.btn-arrow__previous-page:active{
+    transform:translateX(-2rem);
+    }
+.btn-arrow__next-page{
+background-image: url(./assets/icons/icon-next-page.svg);
+}
+.btn-arrow__next-page:active{
+    transform:translateX(2rem);
+    }
+
