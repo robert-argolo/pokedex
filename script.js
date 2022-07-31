@@ -2,6 +2,8 @@ const list = document.querySelector(".list");
 const inputSearch = document.querySelector(".search");
 const btnNextPage = document.querySelector('.btn-arrow__next-page');
 const btnPreviousPage = document.querySelector('.btn-arrow__previous-page');
+const groupArrow = document.querySelector('.group-arrow');
+
 
 let pokemonsList = [];
 
@@ -37,25 +39,18 @@ const createPokemonsList = (pokemonsList) => {
   `;
     }
 }
-const createPokemonsFiltredList = (filtredList)=>{ 
-    list.innerHTML = ""
-    filtredList.forEach(pokemon=>{
-        list.innerHTML += `
-        <li class='items'>
-            <img class='image' 
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
-            <p class='name'>${pokemon.name}</p>
-        </li>
-  ` 
-    })
- } 
 
 const filterPokemon = () => {
-if(inputSearch.value != ''){
-    createPokemonsFiltredList(pokemonsList.filter(pokemonFiltred => pokemonFiltred.name.toLowerCase().includes(inputSearch.value.toLowerCase())));
-}else{
-    createPokemonsList(pokemonsList);
-}
+    if (inputSearch.value != '') {
+        createPokemonsList(pokemonsList.filter(pokemonFiltred => pokemonFiltred.name.toLowerCase().includes(inputSearch.value.toLowerCase())));
+        groupArrow.style.display = "none"
+
+    } else {
+        createPokemonsList(pokemonsList);
+        start = 0;
+        end = pokemonsPerPage;
+        groupArrow.style.display = "flex"
+    }
 }
 const goToPreviousPage = () => {
     // console.log('anterior')
