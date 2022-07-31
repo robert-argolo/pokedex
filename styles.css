@@ -88,8 +88,6 @@ margin-bottom: 0.3rem;
 width: 90vw;
 display: flex;
 justify-content: space-between;
-position: fixed;
-top: 60vh;
 }
 .btn-arrow{
     all: unset;
@@ -104,17 +102,21 @@ top: 60vh;
 transform: scale(1.1);
 transition:1s
 }
-.btn-arrow__previous-page:active{
-transform:translateX(-2rem);
-}
+
 .btn-arrow__previous-page{
 background-image: url(./assets/icons/icon-previous-page.svg);
+position: fixed;
+left: 2vw;
+top: 60vh;
 }
 .btn-arrow__previous-page:active{
     transform:translateX(-2rem);
     }
 .btn-arrow__next-page{
 background-image: url(./assets/icons/icon-next-page.svg);
+position: fixed;
+right: 2vw;
+top: 60vh;
 }
 .btn-arrow__next-page:active{
     transform:translateX(2rem);
