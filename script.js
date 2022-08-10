@@ -42,6 +42,8 @@ const createPokemonsList = (pokemonsList) => {
 
 const filterPokemon = () => {
     if (inputSearch.value != '') {
+        start = 0;
+        end = pokemonsPerPage;
         createPokemonsList(pokemonsList.filter(pokemonFiltred => pokemonFiltred.name.toLowerCase().includes(inputSearch.value.toLowerCase())));
         groupArrow.style.display = "none"
 
